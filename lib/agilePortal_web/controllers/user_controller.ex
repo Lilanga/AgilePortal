@@ -21,6 +21,7 @@ defmodule AgilePortalWeb.UserController do
     case Repo.insert(changeset) do
       {:ok, user} ->
         conn
+        |> AgilePortal.Auth.login(user)
         |> put_flash(:info, "#{user.firstName} created!")
         |> redirect(to: user_path(conn, :show, user))
       {:error, changeset} ->

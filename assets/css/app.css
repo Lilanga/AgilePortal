@@ -1,1 +1,9 @@
 /* This file is for your main application css. */
+.header-logo {
+    width: 154px;
+    height: 67px;
+    display: inline-block;
+    margin-bottom: 1em;
+    background-image: url("/images/agile-logo-horizontal-230x100.png");
+    background-size: 154px 67px;
+  }

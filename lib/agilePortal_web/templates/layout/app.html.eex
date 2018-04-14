@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello AgilePortal!</title>
+    <title>═≡ Agile Portal ≡ ═</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,12 +16,21 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
+          <%= if @current_user do %>
+            <li style="padding:10px 15px;"><%= @current_user.firstName %></li>
+            <li><%= link "Sign out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+          <% else %>
             <li>
               <%= link "Register", to: user_path(@conn, :new) %>
             </li>
+            <li>
+              <%= link "Sign in", to: session_path(@conn, :new) %>
+            </li>
+          <% end %>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <%= link "", to: page_path(@conn, :index), class: "header-logo" %>
+        <%# <span class="logo"></span> %>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
