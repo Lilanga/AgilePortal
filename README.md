@@ -1,4 +1,4 @@
-# AgilePortal
+# AgilePortal  [![codebeat badge](https://codebeat.co/badges/bf0b6e71-bfd5-433c-ab7f-b2587e508e61)](https://codebeat.co/projects/github-com-lilanga-agileportal-master)
 
 To start your Phoenix server:
 
